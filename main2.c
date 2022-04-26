@@ -1,60 +1,90 @@
-#include <stdio.h>
-
 #include<stdio.h>
-int main(){
-    printf("Enter the numbers: ");
-    int a,b;
-    scanf("%d %d",&a,&b);
-    int c;
-    printf("FOR ARITHMETIC OPERATIONS, PRESS 1\n");
-    printf("FOR INCREMENT DECREMENT OPERATIONS, PRESS 2\n");
-    printf("FOR ASSIGNMENT OPERATIONS, PRESS 3\n");
-    printf("FOR RELATIONAL OPERATIONS, PRESS 4\n");
-    printf("FOR LOGICAL OPERATIONS PRESS, 5\n");
-    printf("FOR CONDITIONAL OPERATIONS PRESS, 6\n\n\n");
-    scanf("%d",&c);
-    int a1,a2;
-    a1=a;
-    a2=b;
-    int r=0;
-    switch (c){
+#include<math.h>
+#include<stdlib.h>
+
+int main()
+{
+    int a,b,c,result;
+    int ch;
+        printf("Enter the 3 numbers:\n");
+    scanf(" %d\n %d\n %d\n",&a,&b,&c);
+      
+ printf("1-Arithmetic operators\n2-Increment and Decrement operator\n3-Assignment operator\n4-Relational operator\n5-Logical operator\n6-Conditional operators\n7-Bitwise Operators");
+    scanf("%d",&ch);
+    switch(ch){
         case 1:
-        printf("a = %d ,b = %d\n",a,b);
-        printf("Addition: %d",a+b);
-        printf("\nSubstraction: %d",a-b);
-        printf("\nMultiplication: %d",a*b);
-        printf("\nDivision: %d",a/b);
-        printf("\nRemainder division: %d",a%b);
+        if(c=0)
+        printf("a+b = %d",a+b);
+        printf("a-b = %d",a-b);
+        printf("a*b = %d",a*b);
+        printf("a/b =%d",a/b);
+        printf("a modulus b = %d",a%b);
         break;
+        
         case 2:
-        printf("Increment operator:a = %d b = %d\n",++a,++b);
-        printf("Decrement operator: a = %d b = %d",--a,--b);
+        if(b==0&&c==0)
+        printf("++a = %d",++a);
+        printf("a++ = %d",a++);
+        printf("a-- = %d",a--);
+        printf("--a = %d",--a);
         break;
+        
         case 3:
-        printf("=:  a1= %d a2=%d\n",a1,a2);
-        printf("+=: a1= %d a2= %d\n",a1+=a,a2+=b);
-        printf("-=: a1= %d a2= %d\n",a1-=a,a2-=b);
+        c = a;      // c is 5
+        printf("c = %d\n", c);
+        c += a;     // c is 10 
+        printf("c = %d\n", c);
+        c -= a;     // c is 5
+        printf("c = %d\n", c);
+        c *= a;     // c is 25
+        printf("c = %d\n", c);
+        c /= a;     // c is 5
+        printf("c = %d\n", c);
+        c %= a;     // c = 0
+        printf("c = %d\n", c);
         break;
+        
         case 4:
         
-        printf("%d==%d is %d\n",a,b,a==b);
-        printf("%d>=%d is %d\n",a,b,a>=b);
-        printf("%d<=%d is %d\n",a,b,a<=b);
-        printf("%d!=%d is %d\n",a,b,a!=b);
-        printf("%d>%d  is %d\n",a,b,a>b);
-        printf("%d<%d  is %d\n",a,b,a<b);
+        printf("%d == %d is %d \n", a, b, a == b);
+        printf("%d == %d is %d \n", a, c, a == c);
+        printf("%d > %d is %d \n", a, b, a > b);
+        printf("%d > %d is %d \n", a, c, a > c);
+        printf("%d < %d is %d \n", a, b, a < b);
+        printf("%d < %d is %d \n", a, c, a < c);
+        printf("%d != %d is %d \n", a, b, a != b);
+        printf("%d != %d is %d \n", a, c, a != c);
+        printf("%d >= %d is %d \n", a, b, a >= b);
+        printf("%d >= %d is %d \n", a, c, a >= c);
+        printf("%d <= %d is %d \n", a, b, a <= b);
+        printf("%d <= %d is %d \n", a, c, a <= c);
         break;
+        
         case 5:
-        printf("A is equal to b is and a greater than b is %d \n",(a==b) && (a>b));
-        printf("a is equal to b or a less than b is %d \n", (a==b) || (a<b));
-        printf("a not equal to b or a less than b is %d \n", (a!=b) || (a<b));
-        break;
-        case 6:
-        a>b?printf("a is greater than b"):printf("b is greater than a");
-        break;
+        result = (a == b) && (c > b);
+        printf("(a == b) && (c > b) is %d \n", result);
 
-        default:
-        printf("Enter valid choice");
+        result = (a == b) && (c < b);
+        printf("(a == b) && (c < b) is %d \n", result);
+
+        result = (a == b) || (c < b);
+        printf("(a == b) || (c < b) is %d \n", result);
+
+        result = (a != b) || (c < b);
+        printf("(a != b) || (c < b) is %d \n", result);
+
+        result = !(a != b);
+        printf("!(a != b) is %d \n", result);
+
+        result = !(a == b);
+        printf("!(a == b) is %d \n", result);
+        break;
+        
+        case 6:
+        printf("Bitwise And = %d",a&b);
+        printf("Bitwise OR = %d",a|b);
+        printf("Bitwise XOR = %d",a^b);
+        break;
     }
     return 0;
 }
